@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+import calendar
 
 signs = {
     "aries": "Овен - первый знак зодиака, планета Марс (с 21 марта по 20 апреля).",
@@ -22,6 +23,21 @@ types_dict = {
     'earth': ['taurus', 'virgo', 'capricorn'],
     'air': ['gemini', 'libra', 'aquarius'],
     'water': ['cancer', 'scorpio', 'pisces']
+}
+
+zodiac_dates = {
+    ('capricorn', (12, 22), (1, 19)),
+    ('aquarius', (1, 20), (2, 18)),
+    ('pisces', (2, 19), (3, 20)),
+    ('aries', (3, 21), (4, 19)),
+    ('taurus', (4, 20), (5, 20)),
+    ('gemini', (5, 21), (6, 20)),
+    ('cancer', (6, 21), (7, 22)),
+    ('leo', (7, 23), (8, 22)),
+    ('virgo', (8,23), (9, 22)),
+    ('libra', (9, 23), (10, 22)),
+    ('scorpio', (10, 23), (11, 21)),
+    ('sagittarius', (11, 22), (12, 21))
 }
 
 def index(request):
@@ -60,11 +76,27 @@ def type_index(request):
     li_elements = ''
     for type in types_dict:
         li_elements += f'<li> <a href = "{type}/"> {type.title()} </a> </li>'
-    return HttpResponse(f'<ol> {li_elements} <ol/>')
+    return HttpResponse(f'<ol> {li_elements} </ol>')
 
 def type(request, type_name):
     li_elements = ''
     for sing in types_dict[type_name]:
-        redirect_path = reverse('hororcope_name', args=[sing])
+        redirect_path = reverse('horoscope-name', args=[sing])
         li_elements += f'<li> <a href= "{redirect_path}"> {sing.title()} </a> </li>'
-    return  HttpResponse(f'<lo> {li_elements} </lo>')
+    return  HttpResponse(f'<ol> {li_elements} </ol>')
+
+def horoscope_by_date(request, month, day):
+    if month < 1 or month > 12:
+        return HttpResponse('Неверный месяц')
+    if day < 1 or day > calendar.monthrange(2025, month)[1]:
+        return HttpResponse('Неверный день для этого месяца')
+
+    for sign, (start_month, start_day), (end_month, end_day) in zodiac_dates:
+        if (start_month == end_month and start_day <= day <= end_day and month == start_month) or \
+                (start_month < end_month and (
+                        (month == start_month and day >= start_day) or (month == end_month and day <= end_day))) or \
+                (start_month > end_month and (
+                        (month == start_month and day >= start_day) or (month == end_month and day <= end_day))):
+            return HttpResponse(f"Знак зодиака: {sign.title()}")
+
+    return HttpResponse("Неверная дата")
