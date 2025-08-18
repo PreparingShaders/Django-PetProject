@@ -17,10 +17,31 @@ signs = {
     "pisces": "Рыбы - двенадцатый знак зодиака, планеты Юпитер (с 20 февраля по 20 марта)."
 }
 
+types_dict = {
+    'fire': ['aries', 'leo', 'sagittarius'],
+    'earth': ['taurus', 'virgo', 'capricorn'],
+    'air': ['gemini', 'libra', 'aquarius'],
+    'water': ['cancer', 'scorpio', 'pisces']
+}
+
+def index(request):
+    zodiacs = list(signs)
+    li_elements = ''
+    for sing in zodiacs:
+        redirect_url = reverse('horoscope-name', args=[sing])
+        li_elements += f'<li> <a href="{redirect_url}">{sing.title()} </a> </li>'
+    response = f'''
+    <ol>
+        {li_elements}
+    </ol>
+    '''
+    return HttpResponse(response)
+
+
 # Create your views here.
 def get_info(request, sing_zodiac: str):
     if sing_zodiac.lower() in signs:
-        return HttpResponse(signs[sing_zodiac.lower()])
+        return HttpResponse(f'<h2>{signs[sing_zodiac.lower()]}</h2>')
     return HttpResponse("Неизвестный знак зодиака")
 
 
@@ -31,3 +52,19 @@ def get_info_number(request, sing_zodiac: int):
     name_zodiac = zodiacs[sing_zodiac - 1]
     redirect_urls = reverse('horoscope-name', args=(name_zodiac, ))
     return HttpResponseRedirect(redirect_urls)
+    redirect_url = reverse('horoscope-name', args=(name_zodiac, ))
+    return HttpResponseRedirect(redirect_url)
+
+
+def type_index(request):
+    li_elements = ''
+    for type in types_dict:
+        li_elements += f'<li> <a href = "{type}/"> {type.title()} </a> </li>'
+    return HttpResponse(f'<ol> {li_elements} <ol/>')
+
+def type(request, type_name):
+    li_elements = ''
+    for sing in types_dict[type_name]:
+        redirect_path = reverse('hororcope_name', args=[sing])
+        li_elements += f'<li> <a href= "{redirect_path}"> {sing.title()} </a> </li>'
+    return  HttpResponse(f'<lo> {li_elements} </lo>')
