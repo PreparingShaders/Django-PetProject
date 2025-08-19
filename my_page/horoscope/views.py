@@ -40,6 +40,23 @@ zodiac_dates = {
     ('sagittarius', (11, 22), (12, 21))
 }
 
+def get_yyyy_converters(request, sing_zodiac):
+    return HttpResponse(f'Вы передали число из 4х чисел - {sing_zodiac}')
+
+def get_my_float_converters(request, sing_zodiac):
+    return HttpResponse(f'Вы передали вещественное число- {sing_zodiac}')
+
+
+def get_my_date_converters(request, sing_zodiac):
+    return HttpResponse(f'Вы передали год- {sing_zodiac}')
+
+def get_my_split_converters(request, sing_zodiac):
+    return HttpResponse(f'Возвращаем список строк- {sing_zodiac}')
+
+def get_my_upper_converters(request, sing_zodiac):
+    return HttpResponse(f'Возвращаем строку с изменением регистра- {sing_zodiac}')
+
+
 def index(request):
     zodiacs = list(signs)
     li_elements = ''
