@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.template.loader import  render_to_string
 import calendar
 
 signs = {
@@ -73,10 +74,8 @@ def index(request):
 
 # Create your views here.
 def get_info(request, sing_zodiac: str):
-    if sing_zodiac.lower() in signs:
-        return HttpResponse(f'<h2>{signs[sing_zodiac.lower()]}</h2>')
-    return HttpResponse("Неизвестный знак зодиака")
-
+    response = render_to_string('horoscope/info_zodiac.html')
+    return HttpResponse(response)
 
 def get_info_number(request, sing_zodiac: int):
     zodiacs = list(signs)
