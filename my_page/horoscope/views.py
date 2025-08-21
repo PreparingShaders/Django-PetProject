@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.template.loader import  render_to_string
 import calendar
+from dataclasses import dataclass
+
 
 signs = {
     "aries": "Овен - первый знак зодиака, планета Марс (с 21 марта по 20 апреля).",
@@ -71,10 +73,28 @@ def index(request):
     '''
     return HttpResponse(response)
 
+@dataclass
+class Person:
+    name: str
+    age: int
+
+    def __str__(self):
+        return  f'This is {self.name}'
 
 # Create your views here.
 def get_info(request, sing_zodiac: str):
-    return render(request, 'horoscope/index.html')
+    description = signs.get(sing_zodiac)
+    data = {
+        'description_zodiac': description,
+        'sign': sing_zodiac.title(),
+        'my_list': [1,2,3],
+        'my_int': 1111,
+        'my_float': 11.11,
+        'my_tuple': (1,2,3,4,5),
+        'my_dict': {'name': 'Jack', 'age': 40},
+        'my_class': Person('Will', 55),
+    }
+    return render(request, 'horoscope/info_zodiac.html', context=data)
 
 def get_info_number(request, sing_zodiac: int):
     zodiacs = list(signs)
