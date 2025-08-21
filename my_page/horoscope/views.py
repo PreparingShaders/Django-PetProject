@@ -74,8 +74,7 @@ def index(request):
 
 # Create your views here.
 def get_info(request, sing_zodiac: str):
-    response = render_to_string('horoscope/info_zodiac.html')
-    return HttpResponse(response)
+    return render(request, 'horoscope/index.html')
 
 def get_info_number(request, sing_zodiac: int):
     zodiacs = list(signs)
