@@ -3,9 +3,22 @@ from django.http import HttpResponse, HttpResponseRedirect
 from  django.urls import reverse
 
 # Create your views here.
-def index(request):
-    return render(request, 'week_days/index.html')
+def get_guinness_world_records(request):
+    context = {
+        'power_man': 'Narve Laeret SUPER MAN',
+        'bar_name': 'Bob’s BBQ & Grill WORK',
+        'count_needle': '8.8.8.8 IP RESOLVE DNS EQ',
+    }
+    return render(request, 'week_days/index.html', context=context)
 
+def get_info_about_name(request, name_post: str):
+    data = {
+        'name' : name_post
+    }
+    return render(request, 'week_days/detail_by_name.html', context=data)
 
-def get_info_week_days(request, day: str):
-    return render(request, 'week_days/day.html', {'day': day})
+def get_info_about_number(request, number_post:int):
+    data = {
+        'number' : number_post
+    }
+    return render(request, 'week_days/details_bu_number.html', context=data)

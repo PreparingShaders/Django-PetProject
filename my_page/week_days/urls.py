@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='week_days_index'),
-    path('<str:day>/', views.get_info_week_days, name='day_info')
+    path('test/', views.get_guinness_world_records, name='test'),
+    path('post/<str:name_post>', views.get_info_about_name, name='name_post'),
+    path('post/<int:number_post>', views.get_info_about_number, name='number_post')
 ]
