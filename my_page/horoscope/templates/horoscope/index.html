@@ -5,12 +5,11 @@
     <title>Меню</title>
 </head>
 <body>
-    <ul>
-        {% for name in zodiacs %}
-            <li>{{ zodiac }} </li>
-        {% endfor %}
-    </ul>
-
+<ul>
+    {% for name in zodiacs %}
+    <li>{{ forloop.counter0 }} {{ name|title }}</li>
+    {% endfor %}
+</ul>
 
 </body>
 </html>

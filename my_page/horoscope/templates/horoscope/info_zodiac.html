@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Гороскоп  для {{sign }}</title>
+    <title>Меню</title>
 </head>
 <body>
-    <h1>Приложение гороскоп</h1>
-    <h2>{{ description_zodiac }} </h2>
-    <h2>Мое число {{ my_int }} </h2>
-    <h2>Мое вещественное число {{ my_float }} </h2>
-    <h2>Мой список {{ my_list }} </h2>
-    <h2>Мой кортеж {{ my_tuple }} </h2>
-    <h2>Мой словарь {{ my_dict }} ключ - {{ my_dict.name }}</h2>
-    <h2>Экземляр класса {{ my_class }} возраст - {{ my_class.age }}</h2>
+    <ul>
+        {% for name in zodiacs %}
+            <li>{{ name }} </li>
+        {% end for %}
+    </ul>
 </body>
 </html>

@@ -62,16 +62,12 @@ def get_my_upper_converters(request, sing_zodiac):
 
 def index(request):
     zodiacs = list(signs)
-    li_elements = ''
-    for sing in zodiacs:
-        redirect_url = reverse('horoscope-name', args=[sing])
-        li_elements += f'<li> <a href="{redirect_url}">{sing.title()} </a> </li>'
-    response = f'''
-    <ol>
-        {li_elements}
-    </ol>
-    '''
-    return HttpResponse(response)
+    #f'<li> <a href="{redirect_url}">{sing.title()} </a> </li>'
+    context = {
+        'zodiacs': zodiacs,
+        'signs': {}
+    }
+    return render(request, 'horoscope/index.html', context=context)
 
 @dataclass
 class Person:
