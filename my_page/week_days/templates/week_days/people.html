@@ -6,9 +6,10 @@
 </head>
 <body>
     <h2>Информации о людях</h2>
-    {% for i in people %}
-        <h5> {{ i }} </h5>
-
+    {% for any_people in people %}
+        <h5> ФИО - {{ any_people.name }} </h5>
+        <p> Востраст - {{ any_people.age }} </p>
+        <p> Телефон -  {{ any_people.phone }} </p>
     {% endfor %}
 </body>
 </html>
