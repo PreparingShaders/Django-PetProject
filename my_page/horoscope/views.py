@@ -64,8 +64,7 @@ def index(request):
     zodiacs = list(signs)
     #f'<li> <a href="{redirect_url}">{sing.title()} </a> </li>'
     context = {
-        'zodiacs': zodiacs,
-        'signs': {}
+        'zodiacs': zodiacs
     }
     return render(request, 'horoscope/index.html', context=context)
 
@@ -79,16 +78,10 @@ class Person:
 
 # Create your views here.
 def get_info(request, sing_zodiac: str):
-    description = signs.get(sing_zodiac)
+    description = signs.get(sing_zodiac.lower())
     data = {
         'description_zodiac': description,
-        'sign': sing_zodiac.title(),
-        'my_list': [1,2,3],
-        'my_int': 1111,
-        'my_float': 11.11,
-        'my_tuple': (1,2,3,4,5),
-        'my_dict': {'name': 'Jack', 'age': 40},
-        'my_class': Person('Will', 55),
+        'sign': sing_zodiac.title,
     }
     return render(request, 'horoscope/info_zodiac.html', context=data)
 
