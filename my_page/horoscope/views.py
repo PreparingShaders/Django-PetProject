@@ -34,6 +34,7 @@ def get_info(request, sign_zodiac: str):
         'description_zodiac': description,
         'sign': sign_zodiac,
         'zodiacs': zodiacs,
+        'sign_name':description.split()[0]
     }
     return render(request, 'horoscope/info_zodiac.html', context=data)
 
