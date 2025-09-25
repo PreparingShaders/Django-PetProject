@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4cc2320-6cc0-4eec-b02f-6847912f00d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/movie_app/migrations/0005_alter_movie_year.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie_app/templates/movie_app/all_movie.html" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/templates/movie_app/all_movie.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie_proj/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_proj/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie_proj/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_proj/urls.py" afterDir="false" />
     </list>
@@ -34,12 +36,16 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="32DVy0GYFqOFAZSGp6ngpPW1rqU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
     "Python.movie.executor": "Debug",
     "Python.urls.executor": "Debug",
@@ -93,5 +99,8 @@
       <updated>1756955381032</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
