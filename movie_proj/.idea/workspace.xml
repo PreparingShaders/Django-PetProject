@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4cc2320-6cc0-4eec-b02f-6847912f00d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/movie_app/migrations/0005_alter_movie_year.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movie_app/migrations/0006_movie_currency.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movie_app/migrations/0007_alter_movie_currency.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie_proj/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_proj/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie_proj/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_proj/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "DB__lessons",
     "last_opened_file_path": "/Users/vojtivit/Desktop/python_test/Django/movie_proj",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RunManager">
