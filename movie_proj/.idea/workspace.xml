@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4cc2320-6cc0-4eec-b02f-6847912f00d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/movie_app/migrations/0006_movie_currency.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movie_app/migrations/0007_alter_movie_currency.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movie_app/migrations/0008_movie_director_alter_movie_budget_alter_movie_rating.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/movie_app/migrations/0009_movie_director_email.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movie_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/admin.py" afterDir="false" />
