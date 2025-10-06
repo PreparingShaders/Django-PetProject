@@ -21,7 +21,6 @@ class Actor(models.Model):
     ]
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-
     gender = models.CharField(max_length=1, choices=GENDERS, default=MALE)
 
     def __str__(self):
