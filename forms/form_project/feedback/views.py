@@ -1,16 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-
+from .forms import FeedbackForms
 
 # Create your views here.
 def index(request):
+    form = FeedbackForms()
     if  request.method == 'POST':
-        name = request.POST['name']
-        if len(name) == 0:
-            return render(request, 'feedback/feedback.html', context={'got_error': True})
-        print(name)
-        return HttpResponseRedirect('/done')
-    return render(request, 'feedback/feedback.html', context={'got_error': False})
+        form = FeedbackForms(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            return HttpResponseRedirect('/done')
+    form = FeedbackForms()
+    return render(request, 'feedback/feedback.html', context={'form': form})
 
 
 def done(request):
