@@ -1,16 +1,27 @@
+from tkinter.font import names
+
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import FeedbackForms
+from .models import Feedback
 
 # Create your views here.
 def index(request):
-    form = FeedbackForms()
+
     if  request.method == 'POST':
         form = FeedbackForms(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
+            feed = Feedback(
+                name=form.cleaned_data['name'],
+                surname=form.cleaned_data['surname'],
+                feedback=form.cleaned_data['feedback'],
+                rating=form.cleaned_data['rating'],
+            )
+            feed.save()
             return HttpResponseRedirect('/done')
-    form = FeedbackForms()
+    else:
+        form = FeedbackForms()
     return render(request, 'feedback/feedback.html', context={'form': form})
 
 
